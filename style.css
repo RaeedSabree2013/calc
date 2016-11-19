@@ -1,0 +1,175 @@
+
+/* basic reset */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+/*better text styling*/
+font: bold 14px "Arial", sans-serif;
+overflow: hidden;
+}
+
+/*A nice BG gradient*/
+
+html{
+
+	height: 100%;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: cover;
+}
+
+
+/* Usin box shadows to crate 3d effect*/
+
+
+#calculator{
+	width: 325px;
+	height: auto;
+	margin: 100px auto;
+	padding: 20px;
+	background: linear-gradient(#9dd2ea, #8bceec);
+	border-radius: 3px;
+	box-shadow: 0 4px #009de4, 0px 10px 15px rgba(0,0,0, 0.2);
+	
+}
+
+/*Top Portion*/
+
+.top span.clear{
+float: left;
+
+
+}
+
+/*inset shadow on the screen to creadte indent*/
+
+.top .screen{
+
+float:right;
+	height: 40px;
+	width: 212px;
+	background: rgba(0,0,0, 0.2);
+	border-radius: 3px;
+	box-shadow: inset 0 4px rgba(0,0,0, 0.2);
+	/*Typeography*/
+	font-size: 17px;
+	line-height: 40px;
+	color: white;
+	text-shadow:  1px 1px 2px rgba(0,0,0, 0.2);
+	text-align: right;
+	padding:  0 10px;
+	letter-spacing: 1px;
+
+}
+
+
+
+
+
+
+/*** Clear Floats***/
+
+
+
+.keys .top{
+
+	overflow: hidden;
+
+}
+
+
+/*applying same to keys*/
+
+
+.keys span, .top span.clear{
+
+	float:left;
+	width: 66px;
+	height: 40px;
+	background: white;
+	border-radius: 3px;
+	margin: 0 7px 11px 0;
+	line-height: 40px;
+	text-align: center;
+	color: #888;
+	box-shadow: 0 4px rgba(0,0,0, 0.2);
+	line-height: 36px;
+	cursor: pointer;
+	/*prevent selection of text inside keys*/
+	user-select: none;
+	position: relative;
+	top: 0;
+
+	/*soothing out hover and active states using css3 transitions*/
+	transition: all 0.2s ease;
+}
+
+/** remove right margin from  operator keys**/
+	span.operator{
+
+		margin-right: 0;
+	}
+
+	/*style different type of keys(operator.evaluate,clear) differently*/
+
+	.keys span.operator{
+
+		background: #fff0f5;
+		margin-right: 0;
+	}
+	.keys span.eval{
+
+		background: #f1ff92;
+		box-shadow:  0px 4px #9da853;
+		color: #888e4f;
+	}
+
+	.top span.clear{
+
+		background: #ff9fa8;
+		box-shadow: 0px 4px #ff7c87;
+		color: white;
+	}
+	/*some hover effect*/
+
+	.keys span:hover{
+
+		background: #9c89f6;
+		margin-right: 0;
+		box-shadow: 0px 4px #6b54d3;
+	}
+	.keys span.eval:hover{
+
+		background: #abb850;
+		box-shadow:  0px 4px #717a3;
+		color: #ffffff;
+	}
+
+	.top span.clear:hover{
+
+		background: #468991;
+		box-shadow: 0px 4px #d3545d;
+		color: white;
+	}
+
+	/*stimulating the "pressed" efect on active state of the keys by removing the box-shadow and 
+	moving the keys down a bit*/
+
+	.keys span:active{
+
+		box-shadow: 0px 0px #6b54d3;
+		top: 4px;
+	}
+	.keys span.eval:active{
+
+		box-shadow:  0px 0px #717a33;
+		top: 4px;
+	}
+
+	.top span.clear:active{
+
+		top: 4px;
+		box-shadow: 0px 0px #d3545d;
+		
+	}
