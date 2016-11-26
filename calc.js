@@ -7,17 +7,17 @@ var decimalAdded = false;
 
 for(var i = 0; i < keys.length; i++){
 
-	keys[i].onClick = function(e) {
+	keys[i].onclick = function(e) {
 
 	// get the input and button values
 		var input = document.querySelector('.screen');
 		var inputVal = input.innerHTML;
 		var btnVal = this.innerHTML;
-
+		console.log(btnVal);
 		//Now. just append the key values (btnValue) to the input string and finally use javascript's
 		//eval function to get the result
 		//if clear key is pressed erase everything
-		if(btnVal == 'c') {
+		if(btnVal == 'C') {
 
 			input.innerHTML = '';
 
@@ -33,13 +33,13 @@ for(var i = 0; i < keys.length; i++){
 			//replace alll instances of x and -wdith * and / respectively this can be done  easily
 			//using regex and the 'g' tag which will replace all instances of the matched character
 			// /substring
-			equation = equation.replace(/x/g. '*').replace(/ / /g.	'/');
+			equation = equation.replace(/x/g, '*')/*.replace(/ / /g,	'/')*/;
 
 
 			// final thing left to do is checking the last character of the equation if its
 			// an operator or a decimal, remove it
 			if(operators.indexOf(lastChar) > -1 || lastChar == '.')
-				equation = equation.replace[/.$/, '']
+				equation = equation.replace(/.$/, '')
 
 
 
@@ -69,15 +69,15 @@ for(var i = 0; i < keys.length; i++){
 
 
 					//only add operator if input is not empty and there is no operator at the last
-					if(inputVal != '') {
-						if(inputVal != && operators.indexOf[lastChar] == -1)
+					if(inputVal != '' && operators.indexOf[lastChar] == -1) {
+						
 
 						input.innerHTML += btnVal;
 
 
 					}
 					//allow minues if the string is empty
-					else if(inputVal == && btnVal == '-')
+					else if(inputVal == '' && btnVal == '-')
 						input.innerHTML += btnVal;
 
 					//replace the last operator(if exists) with the newly pressed operator
@@ -114,6 +114,6 @@ for(var i = 0; i < keys.length; i++){
 		 }
 
 		 	//prevent page jumps
-		 	e.preventDefalt();
+		 	e.preventDefault();
 		}
 }
